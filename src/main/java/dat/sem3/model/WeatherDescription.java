@@ -1,9 +1,13 @@
 package dat.sem3.model;
 
+import jakarta.persistence.Table;
+import lombok.ToString;
+
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public enum WeatherDescription {
+    NONE(""),
     CLEAR_SKY("Clear sky"),
     FAIR("Fair"),
     PARTLY_CLOUDY("Partly cloudy"),
@@ -47,10 +51,17 @@ public enum WeatherDescription {
         return description;
     }
 
-    public WeatherDescription get(String description) throws NoSuchElementException {
+    public static WeatherDescription get(String description) throws NoSuchElementException {
         return Arrays.stream(WeatherDescription.values())
-                .filter(e -> e.description.equals(description))
+                .filter(e -> e.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    @Override
+    public String toString() {
+        return "WeatherDescription{" +
+                "description='" + description + '\'' +
+                '}';
     }
 }
