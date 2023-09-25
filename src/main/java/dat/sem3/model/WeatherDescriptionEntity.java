@@ -1,12 +1,14 @@
 package dat.sem3.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "weather_description")
 public class WeatherDescriptionEntity {
     @Id
