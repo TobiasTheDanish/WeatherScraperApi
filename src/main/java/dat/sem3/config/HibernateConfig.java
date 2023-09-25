@@ -54,6 +54,8 @@ public class HibernateConfig {
 
     private static void getAnnotationConfiguration(Configuration configuration) {
         // add annotated classes
+        configuration.addAnnotatedClass(dat.sem3.model.WeatherEntity.class);
+        configuration.addAnnotatedClass(dat.sem3.model.WeatherDescriptionEntity.class);
     }
 
     public static EntityManagerFactory getEntityManagerFactoryConfig(String dbName) {
