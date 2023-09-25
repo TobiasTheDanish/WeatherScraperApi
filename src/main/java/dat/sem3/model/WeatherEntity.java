@@ -1,8 +1,7 @@
 package dat.sem3.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,6 +9,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "weather")
 public class WeatherEntity {
 
@@ -35,7 +35,18 @@ public class WeatherEntity {
         @Column(name = "max_temperature", nullable = false)
         private int maxTemperature;
 
-        @OneToOne
+        @OneToOne(cascade = CascadeType.ALL)
         private WeatherDescriptionEntity weatherDescription;
 
+
+        @Builder
+        public WeatherEntity(LocalDate date, int temperature, int wind, double rain, int minTemperature, int maxTemperature, WeatherDescriptionEntity weatherDescription) {
+                this.date = date;
+                this.temperature = temperature;
+                this.wind = wind;
+                this.rain = rain;
+                this.minTemperature = minTemperature;
+                this.maxTemperature = maxTemperature;
+                this.weatherDescription = weatherDescription;
+        }
 }
