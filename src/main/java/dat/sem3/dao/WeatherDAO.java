@@ -23,9 +23,11 @@ public class WeatherDAO {
 
     public WeatherEntity createWeatherEntity(WeatherEntity weatherEntity){
         try (EntityManager em = emf.createEntityManager()){
-            em.getTransaction().begin();
-            em.persist(weatherEntity);
-            em.getTransaction().commit();
+            if (weatherEntity.getId() == null) {
+                em.getTransaction().begin();
+                em.persist(weatherEntity);
+                em.getTransaction().commit();
+            }
         }
         return weatherEntity;
     }
@@ -39,7 +41,7 @@ public class WeatherDAO {
         return weatherEntity;
     }
 
-    public void updateWeatherEntity (WeatherEntity weatherEntity) {
+    public WeatherEntity updateWeatherEntity (WeatherEntity weatherEntity) {
         if (weatherEntity.getId() != null){
             try(EntityManager em = emf.createEntityManager()){
                 em.getTransaction().begin();
@@ -47,6 +49,7 @@ public class WeatherDAO {
                 em.getTransaction().commit();
             }
         }
+        return weatherEntity;
     }
 
     public void deleteWeatherEntity(int id) {
