@@ -48,7 +48,7 @@ class WeatherScraperTest {
         assertNotNull(scraper);
 
         WeatherScraper scraper2 = WeatherScraper.getInstance();
-        assertEquals(scraper, scraper2);
+        assertSame(scraper, scraper2);
     }
 
     @Test
