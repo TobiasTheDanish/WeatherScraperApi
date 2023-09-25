@@ -1,4 +1,4 @@
-package ${IJ_BASE_PACKAGE}.Config;
+package dat.sem3.config;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
 import org.hibernate.SessionFactory;
