@@ -1,0 +1,82 @@
+@startuml
+!pragma layout smetana
+'https://plantuml.com/object-diagram
+
+object WeatherDTO {
+    -date: LocalDate
+    -temperature: int
+    -wind: int
+    -rain: double
+    -minTemperature: int
+    -maxTemperature: int
+    -night: weatherDescription
+    -morning: weatherDescription
+    -afternoon: weatherDescription
+    -evening: weatherDescription
+}
+
+object WeatherEntity {
+    -id: int
+    -date: LocalDate
+    -temperature: int
+    -wind: int
+    -rain: double
+    -minTemperature: int
+    -maxTemperature: int
+    -weatherDescription: WeatherDescriptionEntity
+}
+object WeatherDescriptionEntity {
+    -id: int
+    -night: weatherDescription
+    -morning: weatherDescription
+    -afternoon: weatherDescription
+    -evening: weatherDescription
+}
+enum weatherDescription {
+    CLEAR_SKY,
+    FAIR,
+    PARTLY_CLOUDY,
+    FOG,
+    CLOUDY,
+    LIGHT_RAIN,
+    RAIN,
+    HEAVY_RAIN,
+    LIGHT_SLEET,
+    SLEET,
+    HEAVY_SLEET,
+    LIGHT_SNOW,
+    SNOW,
+    HEAVY_SNOW,
+    LIGHT_RAIN_SHOWERS,
+    RAIN_SHOWERS,
+    HEAVY_RAIN_SHOWERS,
+    LIGHT_SLEET_SHOWERS,
+    SLEET_SHOWERS,
+    HEAVY_SLEET_SHOWERS,
+    LIGHT_SNOW_SHOWERS,
+    SNOW_SHOWERS,
+    HEAVY_SNOW_SHOWERS,
+    LIGHT_RAIN_SHOWERS_AND_THUNDER,
+    RAIN_SHOWERS_AND_THUNDER,
+    HEAVY_RAIN_SHOWERS_AND_THUNDER,
+    LIGHT_SLEET_SHOWERS_AND_THUNDER,
+    SLEET_SHOWERS_AND_THUNDER,
+    HEAVY_SLEET_SHOWERS_AND_THUNDER,
+    LIGHT_SNOW_SHOWERS_AND_THUNDER,
+    SNOW_SHOWERS_AND_THUNDER,
+    HEAVY_SNOW_SHOWERS_AND_THUNDER,
+    LIGHT_RAIN_AND_THUNDER,
+    RAIN_AND_THUNDER,
+    HEAVY_RAIN_AND_THUNDER,
+    LIGHT_SLEET_AND_THUNDER,
+    SLEET_AND_THUNDER,
+    HEAVY_SLEET_AND_THUNDER,
+    LIGHT_SNOW_AND_THUNDER,
+    SNOW_AND_THUNDER,
+    HEAVY_SNOW_AND_THUNDER
+}
+
+WeatherEntity *-- WeatherDescriptionEntity
+WeatherDescriptionEntity *-- weatherDescription
+
+@enduml
