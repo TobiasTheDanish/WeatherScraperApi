@@ -82,6 +82,7 @@ public class WeatherDAO {
                 List<WeatherEntity> weatherEntities = query.getResultList();
                 em.getTransaction().commit();
 
-                return weatherEntities;}
+                return weatherEntities;
+            }
     }
 }
