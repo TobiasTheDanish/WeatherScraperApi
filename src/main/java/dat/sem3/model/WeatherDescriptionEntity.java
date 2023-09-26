@@ -23,3 +23,4 @@ public class WeatherDescriptionEntity {
     @Column(name = "evening", nullable = false)
     private WeatherDescription evening;
 }
+
