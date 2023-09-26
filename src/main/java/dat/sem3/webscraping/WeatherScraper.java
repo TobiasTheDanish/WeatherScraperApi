@@ -66,7 +66,6 @@ public class WeatherScraper {
                     .evening(descriptions[3])
                     .build());
         });
-
         return res;
     }
 
