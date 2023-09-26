@@ -4,6 +4,10 @@ import dat.sem3.config.HibernateConfig;
 import dat.sem3.model.WeatherEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public class WeatherDAO {
 
@@ -61,5 +65,23 @@ public class WeatherDAO {
                 em.getTransaction().commit();
             }
         }
+    }
+
+    public List<WeatherEntity> getWeatherFromTodayAnd6DaysAhead(){
+            try (EntityManager em = emf.createEntityManager()){
+                LocalDate today = LocalDate.now();
+                LocalDate yesterday = today.minusDays(1);
+                LocalDate sixDaysAhead = today.plusDays(6);
+
+                em.getTransaction().begin();
+                TypedQuery<WeatherEntity> query = em.createQuery(
+                        "SELECT w FROM WeatherEntity w WHERE w.date BETWEEN :startDate AND :endDate", WeatherEntity.class);
+                query.setParameter("startDate",yesterday);
+                query.setParameter("endDate", sixDaysAhead);
+
+                List<WeatherEntity> weatherEntities = query.getResultList();
+                em.getTransaction().commit();
+
+                return weatherEntities;}
     }
 }

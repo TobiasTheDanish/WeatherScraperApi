@@ -10,6 +10,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        WeatherDAO dao = WeatherDAO.getInstance();
+        dao.getWeatherFromTodayAnd6DaysAhead();
+/*
         try {
             List<WeatherDTO> list = WeatherScraper.getInstance().scrape();
 
@@ -21,5 +24,7 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+ */
     }
 }

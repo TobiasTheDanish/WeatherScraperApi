@@ -60,8 +60,6 @@ public enum WeatherDescription {
 
     @Override
     public String toString() {
-        return "WeatherDescription{" +
-                "description='" + description + '\'' +
-                '}';
+        return description;
     }
 }
