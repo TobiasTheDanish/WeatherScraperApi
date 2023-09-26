@@ -11,6 +11,7 @@ import java.util.Properties;
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class HibernateConfig {
 
+    public static EntityManagerFactory getEntityManagerFactoryConfig;
     private static EntityManagerFactory entityManagerFactory;
 
     private static EntityManagerFactory buildEntityFactoryConfig(String dbName) {
