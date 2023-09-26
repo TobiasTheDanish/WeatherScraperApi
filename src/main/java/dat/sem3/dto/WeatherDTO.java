@@ -1,6 +1,8 @@
 package dat.sem3.dto;
 
 import dat.sem3.model.WeatherDescription;
+import dat.sem3.model.WeatherDescriptionEntity;
+import dat.sem3.model.WeatherEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,4 +25,22 @@ public class WeatherDTO {
     private final WeatherDescription morning;
     private final WeatherDescription afternoon;
     private final WeatherDescription evening;
+
+    public WeatherEntity convertToEntity() {
+        WeatherDescriptionEntity weatherDescriptionEntity = WeatherDescriptionEntity.builder()
+                .night(getNight())
+                .morning(getMorning())
+                .afternoon(getAfternoon())
+                .evening(getEvening())
+                .build();
+
+        return WeatherEntity.builder()
+                .date(getDate())
+                .maxTemperature(getMaxTemperature())
+                .minTemperature(getMinTemperature())
+                .weatherDescription(weatherDescriptionEntity)
+                .rain(getRain())
+                .wind(getWind())
+                .build();
+    }
 }
