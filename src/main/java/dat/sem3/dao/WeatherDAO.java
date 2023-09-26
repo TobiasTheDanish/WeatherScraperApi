@@ -23,7 +23,7 @@ public class WeatherDAO {
 
     public WeatherEntity createWeatherEntity(WeatherEntity weatherEntity){
         try (EntityManager em = emf.createEntityManager()){
-            if (weatherEntity.getDate() == null) {
+            if (weatherEntity.getId() == null) {
                 em.getTransaction().begin();
                 em.persist(weatherEntity);
                 em.getTransaction().commit();

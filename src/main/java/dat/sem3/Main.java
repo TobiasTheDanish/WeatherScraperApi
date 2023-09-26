@@ -14,7 +14,7 @@ public class Main {
         try {
 
             List<WeatherDTO> list = WeatherScraper.getInstance().scrape();
-            WeatherApiReader.ApiReader();
+            //WeatherApiReader.ApiReader();
 
             list.forEach(weatherDTO -> {
                 WeatherDAO dao = WeatherDAO.getInstance();
