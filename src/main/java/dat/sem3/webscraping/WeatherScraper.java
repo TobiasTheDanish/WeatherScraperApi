@@ -37,7 +37,6 @@ public class WeatherScraper {
         days.forEach(day -> {
             res.add(getWeatherDTO(day));
         });
-
         return res;
     }
 
