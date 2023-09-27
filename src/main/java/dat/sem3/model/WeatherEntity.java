@@ -20,9 +20,6 @@ public class WeatherEntity {
         @Column(name = "date", nullable = false)
         private LocalDate date;
 
-        @Column(name = "temperature", nullable = false)
-        private int temperature;
-
         @Column(name = "wind", nullable = false)
         private int wind;
 
@@ -40,9 +37,8 @@ public class WeatherEntity {
 
 
         @Builder
-        public WeatherEntity(LocalDate date, int temperature, int wind, double rain, int minTemperature, int maxTemperature, WeatherDescriptionEntity weatherDescription) {
+        public WeatherEntity(LocalDate date, int wind, double rain, int minTemperature, int maxTemperature, WeatherDescriptionEntity weatherDescription) {
                 this.date = date;
-                this.temperature = temperature;
                 this.wind = wind;
                 this.rain = rain;
                 this.minTemperature = minTemperature;
