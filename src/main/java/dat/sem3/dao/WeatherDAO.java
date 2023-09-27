@@ -85,4 +85,16 @@ public class WeatherDAO {
                 return weatherEntities;
             }
     }
+
+    public boolean isWeatherAlreadyPersisted(WeatherEntity entity) {
+        if (entity.getId() != null) {
+            return true;
+        }
+
+        try (EntityManager em = emf.createEntityManager()) {
+            TypedQuery<Boolean> q = em.createQuery("SELECT COUNT(w) > 0 FROM WeatherEntity w WHERE w.date = :date", Boolean.class);
+            q.setParameter("date", entity.getDate());
+            return q.getSingleResult();
+        }
+    }
 }
