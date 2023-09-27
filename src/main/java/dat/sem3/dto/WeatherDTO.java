@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @ToString
 public class WeatherDTO {
     private final LocalDate date;
-    //private final int temperature;
     private final int wind;
     private final double rain;
     private final int minTemperature;

@@ -1,16 +1,11 @@
 package dat.sem3;
 
-import dat.sem3.dao.WeatherDAO;
-import dat.sem3.dto.WeatherDTO;
-import dat.sem3.model.WeatherEntity;
 import dat.sem3.webscraping.WeatherApiReader;
-import dat.sem3.webscraping.WeatherScraper;
-
-import java.io.IOException;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        WeatherApiReader.getCurrentWeather();
+        /*
         try {
 
             List<WeatherDTO> list = WeatherScraper.getInstance().scrape();
@@ -25,5 +20,7 @@ public class Main {
             throw new RuntimeException(e);
         }
         System.exit(0);
+
+         */
     }
 }
