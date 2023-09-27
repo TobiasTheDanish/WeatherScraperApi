@@ -22,11 +22,11 @@ public class CurrentWeatherDTO {
     @ToString
     public class CurrentData{
         @SerializedName(value = "temperature")
-        private final int temperature;
+        private final Integer temperature;
         @SerializedName(value = "skyText")
         private final String weatherDescription;
         @SerializedName(value = "humidity")
-        private final int humidity;
+        private final Integer humidity;
         @SerializedName(value = "windText")
         private final String wind;
 

@@ -32,7 +32,6 @@ class WeatherDAOTest {
         weatherDesc.setMorning(WeatherDescription.SNOW);
         weatherEntity = WeatherEntity.builder()
                 .date(LocalDate.now())
-                .temperature(28)
                 .wind(7)
                 .rain(0)
                 .minTemperature(15)
@@ -72,9 +71,9 @@ class WeatherDAOTest {
 
     @Test
     void updateWeatherEntity() {
-        weatherEntity.setTemperature(69);
+        weatherEntity.setWind(69);
         weatherEntity = dao.updateWeatherEntity(weatherEntity);
-        assertEquals(69, weatherEntity.getTemperature());
+        assertEquals(69, weatherEntity.getWind());
     }
 
     @Test
@@ -86,7 +85,6 @@ class WeatherDAOTest {
         weatherDesc.setMorning(WeatherDescription.SNOW);
         WeatherEntity weather = WeatherEntity.builder()
                 .date(LocalDate.now())
-                .temperature(28)
                 .wind(7)
                 .rain(0)
                 .minTemperature(15)
