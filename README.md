@@ -40,5 +40,6 @@
 <h5>ENUM class</h5>
 <img width="288" alt="Screenshot 2023-09-28 at 14 52 57" src="https://github.com/TobiasTheDanish/WeatherScraperApi/assets/113049401/8b82acf5-8ea4-4302-884c-ab7ed415ebca">
 
-
+<h4>API</h4>
+<p>Det var problematisk at tilgå vores valgte hjemmesides api, så vi valgte derfor at gå med den vi fik tildelt: <a href="https://vejr.eu/api.php?location=K%C3%B8benhavn&degree=C">API</a></p>
 
