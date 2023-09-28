@@ -30,3 +30,9 @@
 <p><strong>Fremmednøgle Constraint</strong>: `weather` tabellen har en fremmednøgle `weatherdescription_id`, som henviser til `id` feltet i `weather_description` tabellen. Dette skaber en relation mellem de to tabeller, hvor `weather` tabellen afhænger af `weather_description` for detaljerede vejrbeskrivelser.</p>
 
 <img width="245" alt="Screenshot 2023-09-28 at 14 21 36" src="https://github.com/TobiasTheDanish/WeatherScraperApi/assets/113049401/13653dae-91be-4523-bebf-a19c39a35534">
+
+
+<h3>Links & API</h3>
+
+<h4>Links</h4>
+<p>Vi har valgt at tage udgangspunkt i <a href="https://www.yr.no/en/forecast/daily-table/2-2618425/Denmark/Capital%20Region/Copenhagen/Copenhagen">denne vejr-hjemmeside</a> da den opfyldte de forudsætninger vi havde til en webside, vi gerne ville scrape for data.</p>
