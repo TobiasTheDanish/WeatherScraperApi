@@ -45,3 +45,4 @@
 
 <h3>Edge cases, fejlhåndtering & potentielle forbedringer</h3>
 <p>Vi stødte på en 'problem', der gjorde at databasen fyldt op med identisk data hver gang vi kørte vores program. Så vi implementeret en metode, som tjekker om alle entiteternes dato matcher med en dato nede i databasen. Hvis datoerne matcher, så returnerer metoden 'true' og så bliver rækken i tabellen overskrevet i stedet for. På den måde slipper vi for dubletter.</p>
+<p>En potentiel forbedring kunne være at benytte Yr's egen API, så projektet udelukkende tog udgangspunkt i deres hjemmeside.</p>
