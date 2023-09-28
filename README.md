@@ -2,9 +2,9 @@
 <h1>Webscraping project</h1>
 
 <h3>EER-Diagram</h3>
-<h3>Tabeller:</h3>
+<h4>Tabeller:</h4>
 
-<h3>1. 'weather'</h3>
+<h6>1. 'weather'</h6>
 <p>Denne tabel indeholder information om vejret for en given dato.</p>
 <ul>
     <li><strong>id</strong>: Et unikt ID for hver række. Dette felt har en auto-increment værdi baseret på sekvensen 'weather_id_seq'.</li>
@@ -16,7 +16,7 @@
     <li><strong>weatherdescription_id</strong>: En fremmed nøgle, der forbinder til `weather_description` tabellen for at give detaljerede vejrbeskrivelser.</li>
 </ul>
 
-<h3>2. 'weather_description'</h3>
+<h6>2. 'weather_description'</h6>
 <p>Denne tabel indeholder detaljerede beskrivelser af vejret i forskellige dele af dagen.</p>
 <ul>
     <li><strong>id</strong>: Et unikt ID for hver række. Dette felt har en auto-increment værdi baseret på sekvensen 'weather_description_id_seq'.</li>
@@ -26,7 +26,7 @@
     <li><strong>night</strong>: Vejrkode for natten.</li>
 </ul>
 
-<h3>Relationer:</h3>
+<h4>Relationer:</h4>
 <p><strong>Fremmednøgle Constraint</strong>: `weather` tabellen har en fremmednøgle `weatherdescription_id`, som henviser til `id` feltet i `weather_description` tabellen. Dette skaber en relation mellem de to tabeller, hvor `weather` tabellen afhænger af `weather_description` for detaljerede vejrbeskrivelser.</p>
 
 <img width="245" alt="Screenshot 2023-09-28 at 14 21 36" src="https://github.com/TobiasTheDanish/WeatherScraperApi/assets/113049401/13653dae-91be-4523-bebf-a19c39a35534">
