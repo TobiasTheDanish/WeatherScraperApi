@@ -43,4 +43,5 @@
 <h4>API</h4>
 <p>Det var problematisk at tilgå vores valgte hjemmesides api, så vi valgte derfor at gå med den vi fik tildelt: <a href="https://vejr.eu/api.php?location=K%C3%B8benhavn&degree=C">Vejrudsigten for København.</a> Vi har valgt at bruge api'en til at dokumentere vejret lige nu, og så bruger vi Jsoup til at scrape den kommende vejrudsigt</p>
 
-
+<h3>Edge cases, fejlhåndtering & potentielle forbedringer</h3>
+<p>Vi stødte på en 'problem', der gjorde at databasen fyldt op med identisk data hver gang vi kørte vores program. Så vi implementeret en metode, som tjekker om alle entiteternes dato matcher med en dato nede i databasen. Hvis datoerne matcher, så returnerer metoden 'true' og så bliver rækken i tabellen overskrevet i stedet for. På den måde slipper vi for dubletter.</p>
